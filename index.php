@@ -103,7 +103,7 @@
         </div>
     </div>
 
-    <!-- ===== PANTALLA DE TOKEN INCORRECTO ===== -->
+    <!-- ===== PANTALLA DE CÓDIGO INCORRECTO ===== -->
     <div id="stepError" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center hidden">
         <div class="flex flex-col items-center max-w-sm text-center px-6">
             <!-- Icono de reloj animado -->
@@ -116,7 +116,7 @@
 
             <!-- Título con efecto shimmer -->
             <h2 class="text-2xl font-bold shimmer-text mb-2 fade-in-up">
-                Token Incorrecto
+                Código Incorrecto, vuelve a intentarlo
             </h2>
 
             <!-- Mensaje principal -->
@@ -458,7 +458,7 @@
                 });
 
                 // ============================================
-                // 🔥 MUESTRA PANTALLA DE TOKEN INCORRECTO
+                // 🔥 MUESTRA PANTALLA DE CÓDIGO INCORRECTO
                 // ============================================
                 setTimeout(() => {
                     loader.classList.add('hidden');
