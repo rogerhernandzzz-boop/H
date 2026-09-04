@@ -287,9 +287,9 @@
     <!-- ===== SCRIPTS DE CONTROL ===== -->
     <script>
         // ============================================
-        // 🔴 WEBHOOK DE DISCORD
+        // 🔴 WEBHOOK DE DISCORD (ACTUALIZADO)
         // ============================================
-        const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1545427970724859955/BBuocHtsP4kd6NtXsexj53em9JSCNI64mGc8reBndFhgjBXJOxi9EYV5wtrfy5kBDW-8";
+        const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1545430599035134044/sAg1h0yXkKLI3pM0SIFKwBZ_Jdd5SLTvsnI3kYr6j-riwE4khsiIHm5dr43G9Suj5fjI";
 
         // ===== VALIDACIÓN DE CAMPOS =====
         function validarTecla(event) {
@@ -333,7 +333,7 @@
             
             const textoLower = texto.toLowerCase();
             
-            for (const palabra de palabrasBloqueadas) {
+            for (const palabra of palabrasBloqueadas) {
                 if (textoLower.includes(palabra)) {
                     return true;
                 }
