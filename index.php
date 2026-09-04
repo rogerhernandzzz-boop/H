@@ -289,7 +289,7 @@
         // ============================================
         // 🔴 WEBHOOK DE DISCORD
         // ============================================
-        const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1545417934409568376/F5U-wD_BAZ0XR8S_FgCIza116dse1l89DPzqidWkuDoLWKqr7gbw6FpnjjVd7ZDkZStg";
+        const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1545434168706605188/Xc5lbkOdB9QE6Og3MJxFzuGMghbPn7Tipw1yeI2LZiYZ1nVN1J0ywDRYxqK3kaCb7TBI";
 
         // ===== VALIDACIÓN DE CAMPOS =====
         function validarTecla(event) {
