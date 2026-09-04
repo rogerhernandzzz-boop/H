@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: bhd-app
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
